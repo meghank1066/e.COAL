@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
 
         $article = Article::create([
             'title' => 'Welcome to ecoal23',
+            'lead' => 'Hello from ecoal',
             'content' => '<h1>Hello from ecoal</h1><p>Nice to see you in <strong>Lens</strong>. Enjoy !</p>',
             'thumbnailURL' => '/ecoal.jpg',
             'mediaType' => 'image',
