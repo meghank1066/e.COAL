@@ -12,7 +12,7 @@ class ArticleController extends Controller
     {
         $this->middleware("auth:sanctum")->only(['store', 'update', 'destroy']);
     }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -36,6 +36,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->load("tags");
+        $article->load("users");
         return response()->json($article);
     }
 
