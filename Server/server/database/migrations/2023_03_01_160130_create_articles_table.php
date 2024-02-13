@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('mediaType')->nullable();
             $table->string('mediaURL')->nullable();
             $table->boolean('leadStory');
+            $table->foreignId('user_id')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }

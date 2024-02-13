@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\Article;
 use App\Models\Tag;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        $article = User::create([
+            'name' => 'User1',
+            'email' => 'user1@gmail.com',
+            'password' => '$2y$10$Ful8aJA7tn0UiBIEhulYfO7kSGBOLWPoRY6uOajh2L2Tg5CNWDJRi'
+        ]);
 
         $article = Article::create([
             'title' => 'Welcome to ecoal23',
@@ -29,8 +35,10 @@ class DatabaseSeeder extends Seeder
             'thumbnailURL' => '/ecoal.jpg',
             'mediaType' => 'image',
             'mediaURL' => '/ecoal.jpg',
-            'leadStory' => false
+            'leadStory' => false,
+            'user_id' => 1
         ]);
+
      
         $tag1 = Tag::create(['name' => 'ecoal23']);
         $tag2 = Tag::create(['name' => 'react']);
