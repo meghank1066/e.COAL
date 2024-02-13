@@ -35,8 +35,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        $article->load("tags");
-        $article->load("users");
+        $article->load("tags", "users");
         return response()->json($article);
     }
 
