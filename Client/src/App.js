@@ -9,6 +9,7 @@ import Articles from './Articles.js/articles';
 import ThisArticle from './ThisArticle/thisarticle';
 import AddArticleForm from './Form/form';
 import './App.css';
+import { Nav } from './Nav/nav';
 
 function App() {
   
@@ -32,6 +33,8 @@ function App() {
         <Route exact={true} path={"/articles/:id"} element={<ThisArticle/>} />
         <Route exact={true} path="/form" element={<AddArticleForm/>} />
       </Routes>
+
+      {/* <Nav accessToken = accessToken/> */}
     </>
   );
 }
