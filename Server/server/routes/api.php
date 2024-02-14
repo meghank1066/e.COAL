@@ -29,7 +29,9 @@ Route::group([
     Route::get('/logout',  [AuthController::class, 'logout']);
 
     Route::get('/user',  function (Request $request) {
-                                return $request->user();
+        $user = $request->user();
+        $user->load("articles");
+                                return $user;
                          });
     
 });

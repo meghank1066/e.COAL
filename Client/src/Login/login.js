@@ -5,20 +5,26 @@ import { useNavigate } from 'react-router-dom'
 
 function Login(){
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+
+    const [formData, setFormData] = useState({email : "", password:""})
+    // const [email, setEmail] = useState("")
+    // const [password, setPassword] = useState("")
+
+    function handlechange(e){
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    }
         
     async function handleLogin(e) {
         e.preventDefault()
 
         try {
-            const response = await axios.post('https://localhost:8000/api/login', {
-                email : email,
-                password : password,
-            })
+            const response = await axios.post('http://127.0.0.1:8000/api/login', formData)
+            const { access_token, token_type } = response.data;
 
-            var connect = response.data
-            console.log(response.data)
+            localStorage.setItem('token', access_token);
+            localStorage.setItem('token_type', token_type);
+
+            console.log(localStorage.getItem("token"))
 
             // useNavigate('/')
             
@@ -35,8 +41,8 @@ function Login(){
                     Email
                     <input
                         type='text'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        name="email"
+                        onChange={handlechange}
                     />
                 </label>
                 <br/>
@@ -44,8 +50,8 @@ function Login(){
                     Password 
                     <input
                         type='password'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        name="password"
+                        onChange={handlechange}
                     />
                 </label>
                 <br/>

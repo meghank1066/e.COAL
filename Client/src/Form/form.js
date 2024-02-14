@@ -4,6 +4,10 @@ import axios from "axios";
 function AddArticleForm() {
     const [formData, setFormData] = useState({ title: "", content: "", tag: "", thumbnailURL: "", mediaURL: "" });
 
+    const config = {
+        headers : {"Authorization" : `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}`}
+    }
+
     function handlechange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
@@ -11,10 +15,11 @@ function AddArticleForm() {
     async function handlesubmit(e) {
         e.preventDefault()
         try {
-            const response = await axios.post("http://localhost:8000/api/articles", formData);
+            const response = await axios.post("http://127.0.0.1:8000/api/articles", formData, config);
             console.log("Article created:", response.data);
         } catch (error) {
             console.error("Error creating article:", error);
+            console.log(config)
         }
 
     }
