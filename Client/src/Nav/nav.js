@@ -7,9 +7,9 @@ export function Nav (props) {
             <nav>
                 <Link to="/search"><box-icon name='search-alt' ></box-icon></Link>
                 <Link to="/"><box-icon type='solid' name='home'></box-icon></Link>
-                {if (props.access-token) {
+                {/* {if (props.access-token) {
                     
-                }}
+                }} */}
                 <Link to="/login"><box-icon name='user-circle' type='solid' ></box-icon></Link>
             </nav>
         </>
