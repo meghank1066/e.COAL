@@ -11,11 +11,14 @@ import AddArticleForm from './Form/form';
 import ArticleAccount from './ArticleAccount/articleaccount';
 import './App.css';
 import { Nav } from './Nav/nav';
+import { HeaderL } from './HeaderL/headerL';
 
 function App() {
   
   return (
     <>
+      <HeaderL/>
+
       <nav>
         <Link to="/">Home</Link>
         <Link to="/search">Search</Link>
@@ -37,7 +40,7 @@ function App() {
         <Route exact={true} path="/profile" element={<ArticleAccount/>} />
       </Routes>
 
-      {/* <Nav accessToken = accessToken/> */}
+      <Nav/>
     </>
   );
 }
