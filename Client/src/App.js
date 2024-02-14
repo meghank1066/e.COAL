@@ -31,7 +31,7 @@ function App() {
         <Route exact={true} path={"/articles/:id"} element={<ThisArticle/>} />
       </Routes>
 
-      <Nav accessToken = accessToken/>
+      {/* <Nav accessToken = accessToken/> */}
     </>
   );
 }
