@@ -20,6 +20,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
+        $articles->load("tags");
         return response()->json($articles);
     }
 

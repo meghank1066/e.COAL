@@ -20,10 +20,11 @@ function ThisArticle() {
     }, []);
 
     const thumbnailURL = "http://localhost:8000/" + article.thumbnailURL
+    
     return (
         <>
         <h1>{article.title}</h1>
-        <img src={thumbnailURL}></img>
+        <img src={article.thumbnailURL}></img>
         <div dangerouslySetInnerHTML={{ __html: article.content }} />
         </>
     )

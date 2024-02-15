@@ -35,7 +35,7 @@ function AddArticleForm() {
             </label>
             <label>
                 Tag :
-                <input type="text" name="tags" value={formData.tag} onChange={handlechange}></input>
+                <input type="text" name="tags" onChange={handlechange}></input>
             </label>
             <label>
                 ThumbnailURL :
