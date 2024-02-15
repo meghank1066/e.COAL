@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { HeaderL } from '../HeaderL/headerL'
 import ArticleTag from '../ArticleTag/articletag';
 
-function Home(){
+function Home() {
     const [articles, setArticles] = useState([])
 
     useEffect(() => {
@@ -22,9 +22,16 @@ function Home(){
 
         fetchArticles()
     }, [])
-    return(
+    return (
         <section>
             <HeaderL />
+
+            <div className={styles.cat}>
+                <h2>It's valentine's day !</h2>
+                <div className={styles.res}>
+                    <ArticleTag tag="valentine" articles={articles} />
+                </div>
+            </div>
 
             <div className={styles.values}>
                 <h1>
@@ -45,8 +52,21 @@ function Home(){
                     </div>
                 </div>
             </div>
-            <ArticleTag tag="ecoal23" articles={articles} />
-            <ArticleTag tag="voiture" articles={articles} />
+
+            <div className={styles.cat}>
+                <h2>Best recipes</h2>
+                <div className={styles.res}>
+                    <ArticleTag tag="recipe" articles={articles} />
+                </div>
+            </div>
+
+            <div className={styles.cat}>
+                <h2>Best guides</h2>
+                <div className={styles.res}>
+                    <ArticleTag tag="guide" articles={articles} />
+                </div>
+            </div>
+
         </section>
     )
 }
