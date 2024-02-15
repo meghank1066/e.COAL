@@ -38,8 +38,8 @@ function ArticleDelete(props) {
     return (
         <>
             <div className={styles.aze}>
-                <button onClick={handleDelete} id={styles.button}><box-icon name='x'></box-icon></button>
-                <button onClick={updatePage} id={styles.button}><box-icon name='edit-alt' ></box-icon></button>
+                <button onClick={handleDelete} id={styles.button}><box-icon size="md" name='x'></box-icon></button>
+                <button onClick={updatePage} id={styles.button}><box-icon size="md" name='edit-alt' ></box-icon></button>
 
                 <Link to={`/articles/${props.id}`}>
                     <div className={styles.box}>

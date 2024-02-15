@@ -47,7 +47,7 @@ function ArticleAccount(props) {
             <HeaderT />
             <div className={styles.user}>
                 <div className={styles.pers}>
-                    <Link to="/" onClick={handleLogout} id={styles.deco}><box-icon name='exit' ></box-icon></Link>
+                    <Link to="/" onClick={handleLogout} id={styles.deco}><box-icon size="md" name='exit' ></box-icon></Link>
                     <img src="/img/User.png"></img>
                     <p>{articles.name}</p>
                     <p>{articles.email}</p>
