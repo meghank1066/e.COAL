@@ -74,13 +74,13 @@ function App() {
       </Routes>
 
 
-      <nav>
+      {/* <nav>
         <Link to="/search"><box-icon name='search'></box-icon></Link>
         <Link to="/"><box-icon name='home' type='solid' ></box-icon></Link>
         {!localStorage.getItem("token") && <Link to="/login"><box-icon name='user-circle' type='solid' ></box-icon></Link>}
         {localStorage.getItem("token") && <Link to="/form"><box-icon name='add-to-queue' ></box-icon></Link>}
         {localStorage.getItem("token") && <Link to="/" onClick={handleLogout}><box-icon name='exit' ></box-icon></Link>}
-      </nav>
+      </nav> */}
       <Nav/>
     </>
   );
