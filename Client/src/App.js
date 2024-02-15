@@ -15,6 +15,8 @@ import { Nav } from './Nav/nav';
 import { useState } from 'react';
 import axios from 'axios';
 import { HeaderL } from './HeaderL/headerL';
+import Register from './Register/register';
+import Update from './Update/update';
 
 function App() {
 
@@ -25,6 +27,11 @@ function App() {
   const PrivateRoute = () => {
     const auth = isAuthenticated;
     return auth ? <Outlet /> : <Navigate to="/login"/>;
+  };
+
+  const PublicRoute = () => {
+    const auth = isAuthenticated;
+    return auth ? <Navigate to="/"/> : <Outlet />;
   };
 
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
@@ -60,12 +67,20 @@ function App() {
       <Routes>
         <Route exact={true} path="/" element={<Home/>} />
         <Route exact={true} path="/search" element={<Search/>} />
-        <Route exact={true} path="/login" element={<Login setIsAuthenticated={setIsAuthenticated}/>}/>
+        <Route exact path="/login" element={<PublicRoute/>}>
+            <Route exact={true} path="/login" element={<Login setIsAuthenticated={setIsAuthenticated}/>}/>
+        </Route>
         <Route exact={true} path="/credits" element={<Credits/>} />
         <Route exact={true} path="/articles" element={<Articles/>} />
+        <Route exact path="/register" element={<PublicRoute/>}>
+          <Route exact={true} path="/register" element={<Register setIsAuthenticated={setIsAuthenticated}/>} />
+        </Route>
         <Route exact={true} path={"/articles/:id"} element={<ThisArticle/>} />
         <Route exact path="/form" element={<PrivateRoute/>}>
           <Route exact={true} path="/form" element={<AddArticleForm/>} />
+        </Route>
+        <Route exact path={"/update/:id"} element={<PrivateRoute/>}>
+          <Route exact={true} path={"/update/:id"} element={<Update/>} />
         </Route>
         <Route exact path="/profile" element={<PrivateRoute/>}>
           <Route exact={true} path="/profile" element={<ArticleAccount/>} />

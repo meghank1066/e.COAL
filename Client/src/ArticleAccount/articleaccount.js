@@ -28,7 +28,7 @@ function ArticleAccount() {
             <p>{articles.name}</p>
             <p>test</p>
             <h2>Your Articles</h2>
-            {articles.articles?.map(x => <ArticleDelete title={x.title} thumbnailURL={x.thumbnailURL} id={x.id} setArticles={setArticles}/>)}
+            {articles.articles?.map(x => <ArticleDelete title={x.title} content={x.content} tags={x.tags} thumbnailURL={x.thumbnailURL} mediaURL={x.mediaURL} id={x.id} setArticles={setArticles}/>)}
         </div>
     )
 }

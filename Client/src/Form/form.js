@@ -27,11 +27,11 @@ function AddArticleForm() {
         <form onSubmit={handlesubmit}>
             <label>
                 Title :
-                <input type="text" name="title" value={formData.title} onChange={handlechange}></input>
+                <input type="text" name="title" onChange={handlechange}></input>
             </label>
             <label>
                 Content :
-                <input type="text" name="content" value={formData.content} onChange={handlechange}></input>
+                <input type="text" name="content" onChange={handlechange}></input>
             </label>
             <label>
                 Tag :
@@ -39,11 +39,11 @@ function AddArticleForm() {
             </label>
             <label>
                 ThumbnailURL :
-                <input type="text" name="thumbnailURL" value={formData.thumbnailURL} onChange={handlechange}></input>
+                <input type="text" name="thumbnailURL" onChange={handlechange}></input>
             </label>
             <label>
                 mediaURL :
-                <input type="text" name="mediaURL" value={formData.mediaURL} onChange={handlechange}></input>
+                <input type="text" name="mediaURL" onChange={handlechange}></input>
             </label>
             <label>
                 Submit :
