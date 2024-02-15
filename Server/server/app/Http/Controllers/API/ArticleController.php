@@ -99,7 +99,6 @@ class ArticleController extends Controller
     {
         $request->validate([
             "title" => "required",
-            "lead" => "required",
             "content" => "required",
             "thumbnailURL" => "required",
             "mediaURL" => "required",
@@ -109,7 +108,6 @@ class ArticleController extends Controller
         $article->tags()->detach();
 
         $article->title = $request->input('title');
-        $article->lead = $request->input('lead');
         $article->content = $request->input('content');
         $article->thumbnailURL = $request->input('thumbnailURL');
         $article->mediaURL = $request->input('mediaURL');

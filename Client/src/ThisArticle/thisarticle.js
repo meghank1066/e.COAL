@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 
-function ThisArticle() {
+function ThisArticle(props) {
     let params = useParams()
     const [article, setArticle] = useState({id:-1,title:"",thumbnailURL:"",content:""})
 
@@ -21,6 +21,10 @@ function ThisArticle() {
 
     const thumbnailURL = "http://localhost:8000/" + article.thumbnailURL
     
+    if (props.auth==false){
+        article.content = article.content.substring(0, 100)
+    }
+
     return (
         <div className={styles.articlePage} >
         <h1 className={styles.articleTitle}>{article.title}</h1>
