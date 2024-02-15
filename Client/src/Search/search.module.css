@@ -1,0 +1,15 @@
+.bar {
+    width: 100%;
+}
+
+.bar div {
+    box-shadow: inset 8px 24px 19px -3px rgba(0,0,0,0.1);
+    border: solid var(--black-color) 1px;
+    border-radius: 10px;
+    
+}
+
+.bar input[type="text"] {
+    background-color: var(--pale-color);
+    border: none;
+}
