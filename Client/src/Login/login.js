@@ -3,19 +3,20 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { HeaderL } from '../HeaderL/headerL';
 
 
-function Login(props){
+function Login(props) {
 
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({email : "", password:""})
+    const [formData, setFormData] = useState({ email: "", password: "" })
     // const [email, setEmail] = useState("")
     // const [password, setPassword] = useState("")
 
-    function handlechange(e){
+    function handlechange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
-        
+
     async function handleLogin(e) {
         e.preventDefault()
 
@@ -30,38 +31,41 @@ function Login(props){
 
 
             // useNavigate('/')
-            
+
         } catch (error) {
             var nope = error
         }
     }
 
 
-    return(
-        <section>
-            <form onSubmit={handleLogin}>
-                <label>
+    return (
+        <>
+            <HeaderL />
+
+            <section>
+                <form onSubmit={handleLogin} className={styles.log}>
                     Email
                     <input
                         type='text'
                         name="email"
                         onChange={handlechange}
                     />
-                </label>
-                <br/>
-                <label>
-                    Password 
+                    <br />
+                    Password
                     <input
                         type='password'
                         name="password"
                         onChange={handlechange}
                     />
-                </label>
-                <br/>
-                <button type='submit'>Login</button>
-            </form>
-            <p>Don't have an account ? <Link to="/register">Register</Link></p>
-        </section>
+                    <br />
+                    <p>Any account ? <Link to="/register">Register</Link></p>
+
+                    <br />
+                    <button type='submit'>Login</button>
+                </form>
+            </section>
+        </>
+
     )
 }
 
