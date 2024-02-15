@@ -13,18 +13,18 @@ function Home() {
                 <h1>
                     Our Values
                 </h1>
-                <div>
+                <div className={styles.valIcon}>
                     <div>
-                        <box-icon type='solid' name='heart'></box-icon>
+                        <box-icon type='solid' name='heart' size='md'></box-icon>
                         <p>Healthy</p>
                     </div>
                     <div>
-                    <box-icon name='dish' type='solid' ></box-icon>
-                    <p>Tasty</p>
+                        <box-icon name='dish' type='solid' size='md'></box-icon>
+                        <p>Tasty</p>
                     </div>
                     <div>
-                    <box-icon name='euro' ></box-icon>
-                    <p>Cheap</p>
+                        <box-icon name='euro' size='md'></box-icon>
+                        <p>Cheap</p>
                     </div>
                 </div>
             </div>
