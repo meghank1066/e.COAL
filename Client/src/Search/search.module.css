@@ -1,0 +1,44 @@
+/* .bar {  
+    border: solid var(--black-color) 1px; */
+    /* border-radius: 10px; */
+    /* display: flex;
+    justify-content: space-between; */
+    /* width: 80%;
+} */
+
+.bar{
+    position: relative;
+    height: fit-content;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.bar input[type="text"] {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 7px 8px 25px -11px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding: .5em 1em;
+}
+
+#loupe {
+    position: absolute;
+    right: 0;
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .5em;
+}
+
+.res {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin: 1em;
+}
