@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddArticleForm() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({ title: "", content: "", tag: "", thumbnailURL: "", mediaURL: "" });
 
     const config = {
@@ -17,6 +19,7 @@ function AddArticleForm() {
         try {
             const response = await axios.post("http://127.0.0.1:8000/api/articles", formData, config);
             console.log("Article created:", response.data);
+            navigate(`/articles/${response.data.id}`)
         } catch (error) {
             console.error("Error creating article:", error);
             console.log(config)
