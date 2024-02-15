@@ -43,22 +43,19 @@ function AddArticleForm() {
 
             <label className={styles.label}>
     <textarea
-        style={{
-            width: "300px",
-            height: "150px",
-            maxWidth: "380px",
-            minWidth: "200px",
-            minHeight: "100px",
-            maxHeight: "200px",
-            border: "0.5px solid black",
-            borderRadius: "5px 5px 5px 5px"
-        }}
-        className={`${styles.commentBox} ${styles.label} ${styles.draggable}`}
-        name="content"
-        value={formData.content}
-        placeholder="Add Content.."
-        onChange={handlechange}
-    />
+    placeholder="Write Content.."
+              style={{
+                width: "100%",
+                maxWidth: "380px",
+                height: "150px",
+                maxHeight: "200px",
+                border: "0.5px solid black",
+                borderRadius: "5px",
+                resize: "none", 
+            }}
+
+        />
+
     
 </label>
             <label className={styles.label}>
