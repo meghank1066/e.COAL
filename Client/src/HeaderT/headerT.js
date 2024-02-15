@@ -1,6 +1,6 @@
-import styles from './headerL.module.css'
+import styles from './headerT.module.css'
 
-export function HeaderL() {
+export function HeaderT() {
     return (
         <div className={styles.head}>
             <img src='/img/LogoHor.png'></img>
