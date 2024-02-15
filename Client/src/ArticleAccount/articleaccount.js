@@ -54,7 +54,7 @@ function ArticleAccount(props) {
                 </div>
                 <h2 className={styles.title}>Your Articles</h2>
                 <div className={styles.res}>
-                {articles.articles?.map(x => <ArticleDelete title={x.title} content={x.content} tags={x.tags} thumbnailURL={x.thumbnailURL} mediaURL={x.mediaURL} id={x.id} setArticles={setArticles}/>)}
+                    {articles.articles?.map(x => <ArticleDelete title={x.title} content={x.content} tags={x.tags} thumbnailURL={x.thumbnailURL} mediaURL={x.mediaURL} id={x.id} setArticles={setArticles} />)}
                 </div>
             </div>
         </>

@@ -3,7 +3,7 @@
     border-radius: 20px;
     color: var(--black-color);
     text-align: center;
-    padding: 0 0 1em 0;
+    padding: 0 0 1em 0;     
 }
 
 .box img {
@@ -11,4 +11,14 @@
     aspect-ratio: 1/1;
     object-fit: cover;
     width: 100%;
+}
+
+.button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.aze {
+    position: relative;
 }
