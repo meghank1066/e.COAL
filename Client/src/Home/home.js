@@ -6,10 +6,6 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { HeaderL } from '../HeaderL/headerL'
 
-
-
-function Home() {
-
 function Home(){
     const [articles, setArticles] = useState([])
 
@@ -50,7 +46,7 @@ function Home(){
                 </div>
             </div>
             <ArticleTag tag="ecoal23" articles={articles} />
-            <ArticleTag tag="avion" articles={articles} />
+            <ArticleTag tag="voiture" articles={articles} />
         </section>
     )
 }
