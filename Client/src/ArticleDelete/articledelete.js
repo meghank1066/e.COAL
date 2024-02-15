@@ -3,9 +3,12 @@ import ThisArticle from '../ThisArticle/thisarticle'
 import { Route, Link, Routes } from "react-router-dom"
 import React from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 function ArticleDelete(props) {
     //<ThisArticle id={props.id}/>
+
+    const navigate = useNavigate();
 
     const config = {
         headers : {"Authorization" : `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}`}
@@ -17,9 +20,26 @@ function ArticleDelete(props) {
     }
 
     const thumbnailURL = "http://localhost:8000/" + props.thumbnailURL
+
+    const destinationProps = {
+        title: props.title,
+        content: props.content,
+        tags: props.tags,
+        thumbnailURL: props.thumbnailURL,
+        mediaURL: props.mediaURL,
+        id: props.id
+      };
+    console.log(destinationProps)
+
+    function updatePage(){
+        navigate(`/update/${props.id}`, {state: props.destinationProps})
+    }
+
     return (
         <>
             <button onClick={handleDelete}>X</button>
+            <button onClick={updatePage}>Update article</button>
+
             <Link to={`/articles/${props.id}`}>
                 <div className={styles.box}>
                     <img src={props.thumbnailURL}></img>

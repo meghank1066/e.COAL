@@ -16,6 +16,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { HeaderL } from './HeaderL/headerL';
 import Register from './Register/register';
+import Update from './Update/update';
 
 function App() {
 
@@ -77,6 +78,9 @@ function App() {
         <Route exact={true} path={"/articles/:id"} element={<ThisArticle/>} />
         <Route exact path="/form" element={<PrivateRoute/>}>
           <Route exact={true} path="/form" element={<AddArticleForm/>} />
+        </Route>
+        <Route exact path={"/update/:id"} element={<PrivateRoute/>}>
+          <Route exact={true} path={"/update/:id"} element={<Update/>} />
         </Route>
         <Route exact path="/profile" element={<PrivateRoute/>}>
           <Route exact={true} path="/profile" element={<ArticleAccount/>} />
