@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Articles from '../Articles.js/articles';
 import Search from '../Search/search';
+import { HeaderT } from '../HeaderT/headerT';
 
-function SearchPage(){
+function SearchPage() {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
@@ -19,10 +20,13 @@ function SearchPage(){
         fetchArticles();
     }, []);
     console.log("salut", articles)
-    return(
-        <div>
-            <Search articles={articles} />
-        </div>
+    return (
+        <>
+            <HeaderT />
+            <div>
+                <Search articles={articles} />
+            </div>
+        </>
     )
 }
 

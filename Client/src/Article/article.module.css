@@ -3,12 +3,42 @@
     border-radius: 20px;
     color: var(--black-color);
     text-align: center;
-    padding: 0 0 1em 0;
+    padding: 0 0 1em 0;     
 }
 
 .box img {
     border-radius: 20px;
     aspect-ratio: 1/1;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
+}
+
+.button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.aze {
+    position: relative;
+}
+
+
+#button{
+    border: none;
+    position: absolute;
+    background: var(--green-color);
+    top: 0;
+}
+
+#button:first-child{
+    right: 0;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#button:nth-child(2){
+    left: 0;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }

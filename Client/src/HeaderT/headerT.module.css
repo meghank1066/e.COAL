@@ -1,6 +1,16 @@
 .head {
     margin: 0 auto;
     background-color: var(--green-color);
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 20px 20px;
     box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    position: relative;
+    z-index: 999;
+}
+
+.head img {
+    width: 15rem;
+    margin: 0.3em;
 }

@@ -46,24 +46,10 @@ function App() {
       });
     localStorage.removeItem('token')
     setIsAuthenticated(false)
-
-}
+  }
   
   return (
     <>
-      <HeaderL/>
-
-      {/* <nav>
-        <Link to="/">Home</Link>
-        <Link to="/search">Search</Link>
-        <Link to="/login">Account</Link>
-        <Link to="/credits">Credits</Link>
-        <Link to="/articles">Articles</Link>
-        <Link to="/form">Form</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/searchpage">SearchPage</Link>
-      </nav> */}
-
       <Routes>
         <Route exact={true} path="/" element={<Home/>} />
         <Route exact={true} path="/search" element={<Search/>} />
@@ -83,19 +69,11 @@ function App() {
           <Route exact={true} path={"/update/:id"} element={<Update/>} />
         </Route>
         <Route exact path="/profile" element={<PrivateRoute/>}>
-          <Route exact={true} path="/profile" element={<ArticleAccount/>} />
+          <Route exact={true} path="/profile" element={<ArticleAccount setIsAuthenticated={setIsAuthenticated}/>} />
         </Route>
         <Route exact={true} path="/searchpage" element={<SearchPage/>} />
       </Routes>
 
-
-      {/* <nav>
-        <Link to="/search"><box-icon name='search'></box-icon></Link>
-        <Link to="/"><box-icon name='home' type='solid' ></box-icon></Link>
-        {!localStorage.getItem("token") && <Link to="/login"><box-icon name='user-circle' type='solid' ></box-icon></Link>}
-        {localStorage.getItem("token") && <Link to="/form"><box-icon name='add-to-queue' ></box-icon></Link>}
-        {localStorage.getItem("token") && <Link to="/" onClick={handleLogout}><box-icon name='exit' ></box-icon></Link>}
-      </nav> */}
       <Nav/>
     </>
   );

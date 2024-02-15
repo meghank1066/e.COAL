@@ -11,9 +11,9 @@ function ArticleDelete(props) {
     const navigate = useNavigate();
 
     const config = {
-        headers : {"Authorization" : `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}`}
+        headers: { "Authorization": `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}` }
     }
-    async function handleDelete(){
+    async function handleDelete() {
         await axios.delete(`http://localhost:8000/api/articles/${props.id}`, config)
         const response = await axios.get("http://127.0.0.1:8000/api/user", config)
         props.setArticles(response.data)
@@ -28,25 +28,26 @@ function ArticleDelete(props) {
         thumbnailURL: props.thumbnailURL,
         mediaURL: props.mediaURL,
         id: props.id
-      };
+    };
     console.log(destinationProps)
 
-    function updatePage(){
-        navigate(`/update/${props.id}`, {state: props.destinationProps})
+    function updatePage() {
+        navigate(`/update/${props.id}`, { state: props.destinationProps })
     }
 
     return (
         <>
-            <button onClick={handleDelete}>X</button>
-            <button onClick={updatePage}>Update article</button>
+            <div className={styles.aze}>
+                <button onClick={handleDelete} id={styles.button}><box-icon size="md" name='x'></box-icon></button>
+                <button onClick={updatePage} id={styles.button}><box-icon size="md" name='edit-alt' ></box-icon></button>
 
-            <Link to={`/articles/${props.id}`}>
-                <div className={styles.box}>
-                    <img src={props.thumbnailURL}></img>
-                    {props.title}
-                </div>
-            </Link>
-
+                <Link to={`/articles/${props.id}`}>
+                    <div className={styles.box}>
+                        <img src={props.thumbnailURL}></img>
+                        {props.title}
+                    </div>
+                </Link>
+            </div>
         </>
     )
 }
