@@ -19,12 +19,16 @@ function Search({ articles }) {
     });
 
     return (
-        <section className={styles.bar}>
-            <div>
+        <section>
+            <div className={styles.bar}>
                 <input type='text' placeholder='Search by title or tag' value={searchTerm} onChange={handleSearchChange} />
-                <box-icon name='search'></box-icon>
+                <box-icon name='search' id={styles.loupe}></box-icon>
             </div>
-            {filteredArticles.map(x => <Article key={x.id} title={x.title} thumbnailURL={x.thumbnailURL} id={x.id} />)}
+
+            
+            <div className={styles.res}>
+                {filteredArticles.map(x => <Article key={x.id} title={x.title} thumbnailURL={x.thumbnailURL} id={x.id} />)}
+            </div>
         </section>
     )
 }

@@ -1,0 +1,44 @@
+.res {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin: 1em;
+}
+
+.title {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.pers {
+    background: var(--orange-background);
+    margin-top: -20px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: var(--shadow);
+    padding-bottom: 0.5em;
+}
+
+#deco {
+    position: absolute;
+    right: 2em;
+}
+
+.pers img {
+    width: 8em;
+}
+
+.user h2 {
+    padding: 0em 1em;
+}
+
+.pers :nth-child(3) {
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
