@@ -75,7 +75,7 @@ function App() {
         <Route exact path="/register" element={<PublicRoute/>}>
           <Route exact={true} path="/register" element={<Register setIsAuthenticated={setIsAuthenticated}/>} />
         </Route>
-        <Route exact={true} path={"/articles/:id"} element={<ThisArticle/>} />
+        <Route exact={true} path={"/articles/:id"} element={<ThisArticle auth={isAuthenticated}/>} />
         <Route exact path="/form" element={<PrivateRoute/>}>
           <Route exact={true} path="/form" element={<AddArticleForm/>} />
         </Route>
