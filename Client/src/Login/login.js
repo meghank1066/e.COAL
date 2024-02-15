@@ -1,7 +1,7 @@
 import styles from './login.module.css'
 import { useState } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 function Login(props){
 
@@ -24,8 +24,7 @@ function Login(props){
             localStorage.setItem('token', access_token);
             localStorage.setItem('token_type', token_type);
             props.setIsAuthenticated(true)
-
-            console.log(localStorage.getItem("token"))
+            return <Navigate to="/"/>
 
             // useNavigate('/')
             
