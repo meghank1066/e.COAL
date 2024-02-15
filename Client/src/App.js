@@ -12,7 +12,6 @@ import ArticleAccount from './ArticleAccount/articleaccount';
 import SearchPage from './SearchPage/searchpage';
 import './App.css';
 import { Nav } from './Nav/nav';
-import Logout from './Logout/logout';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -27,7 +26,7 @@ function App() {
     return auth ? <Outlet /> : <Navigate to="/login"/>;
   };
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
 
   function handleLogout() {  // The function is asynchronous
     axios.get('http://localhost:8000/api/logout', config)
@@ -68,9 +67,8 @@ function App() {
         <Route exact path="/profile" element={<PrivateRoute/>}>
           <Route exact={true} path="/profile" element={<ArticleAccount/>} />
         </Route>
-        <Route exact={true} path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated}/>}/>
-      </Routes>
       <Route exact={true} path="/searchpage" element={<SearchPage/>} />
+      </Routes>
 
       <nav>
         <Link to="/search"><box-icon name='search'></box-icon></Link>
