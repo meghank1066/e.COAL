@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding-bottom: 5em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* FONT */

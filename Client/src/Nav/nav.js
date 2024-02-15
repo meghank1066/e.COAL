@@ -2,7 +2,7 @@ import styles from './nav.module.css'
 import 'boxicons'
 import { Route, Link, Routes } from "react-router-dom"
 
-export function Nav (props) {
+export function Nav () {
     return (
         <>
             <nav className={styles.nav}>
