@@ -1,11 +1,12 @@
 import styles from './login.module.css'
 import { useState } from 'react'
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
 
 function Login(props){
 
-
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({email : "", password:""})
     // const [email, setEmail] = useState("")
     // const [password, setPassword] = useState("")
@@ -24,7 +25,8 @@ function Login(props){
             localStorage.setItem('token', access_token);
             localStorage.setItem('token_type', token_type);
             props.setIsAuthenticated(true)
-            return <Navigate to="/"/>
+            navigate("/")
+
 
             // useNavigate('/')
             
