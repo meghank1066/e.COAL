@@ -20,7 +20,6 @@ function SearchPage(){
     }, []);
     return(
         <div>
-            <Articles />
             <Search articles={articles} />
         </div>
     )
