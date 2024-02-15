@@ -14,11 +14,7 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-<<<<<<< HEAD
-            $table->string('lead')->nullable;
-=======
             $table->string('lead')->nullable();
->>>>>>> kix
             $table->text('content');
             $table->string('thumbnailURL');
             $table->string('mediaType')->nullable();

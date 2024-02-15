@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-function Login(){
+function Login(props){
 
 
     const [formData, setFormData] = useState({email : "", password:""})
@@ -23,6 +23,7 @@ function Login(){
 
             localStorage.setItem('token', access_token);
             localStorage.setItem('token_type', token_type);
+            props.setIsAuthenticated(true)
 
             console.log(localStorage.getItem("token"))
 
