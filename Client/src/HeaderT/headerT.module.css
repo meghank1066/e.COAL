@@ -3,4 +3,12 @@
     background-color: var(--green-color);
     border-radius: 0 0 10px 10px;
     box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+.head img {
+    width: 10rem;
+    margin: 0.3em;
 }
