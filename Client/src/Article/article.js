@@ -10,7 +10,7 @@ function Article(props) {
             <Link to={`/articles/${props.id}`}>
                 <div className={styles.box}>
                     <img src={thumbnailURL}></img>
-                    <h2>{props.title}</h2>
+                    {props.title}
                 </div>
             </Link>
 
