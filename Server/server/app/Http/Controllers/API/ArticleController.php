@@ -80,6 +80,7 @@ class ArticleController extends Controller
                 $article->tags()->attach($tag->id);
             }
         }
+        return response()->json($article);
 }
 
     /**

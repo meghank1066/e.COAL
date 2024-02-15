@@ -1,7 +1,8 @@
+import styles from './update.module.css';
 import React, { useState } from "react";
 import axios from "axios";
 
-function AddArticleForm() {
+function Update(props) {
     const [formData, setFormData] = useState({ title: "", content: "", tag: "", thumbnailURL: "", mediaURL: "" });
 
     const config = {
@@ -15,10 +16,10 @@ function AddArticleForm() {
     async function handlesubmit(e) {
         e.preventDefault()
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/articles", formData, config);
-            console.log("Article created:", response.data);
+            const response = await axios.put(`http://127.0.0.1:8000/api/articles/${props.id}`, formData, config);
+            console.log("Article updated:", response.data);
         } catch (error) {
-            console.error("Error creating article:", error);
+            console.error("Error updating article:", error);
             console.log(config)
         }
 
@@ -27,23 +28,23 @@ function AddArticleForm() {
         <form onSubmit={handlesubmit}>
             <label>
                 Title :
-                <input type="text" name="title" onChange={handlechange}></input>
+                <input type="text" value={props.title ? props.title : ''} name="title" onChange={handlechange}></input>
             </label>
             <label>
                 Content :
-                <input type="text" name="content" onChange={handlechange}></input>
+                <input type="text" value={props.content ? props.content : ''} name="content" onChange={handlechange}></input>
             </label>
             <label>
                 Tag :
-                <input type="text" name="tags" onChange={handlechange}></input>
+                <input type="text" value={props.tags ? props.tags : ''} name="tags" onChange={handlechange}></input>
             </label>
             <label>
                 ThumbnailURL :
-                <input type="text" name="thumbnailURL" onChange={handlechange}></input>
+                <input type="text" value={props.thumbnailURL ? props.thumbnailURL : ''} name="thumbnailURL" onChange={handlechange}></input>
             </label>
             <label>
                 mediaURL :
-                <input type="text" name="mediaURL" onChange={handlechange}></input>
+                <input type="text" value={props.mediaURL ? props.mediaURL : ''} name="mediaURL" onChange={handlechange}></input>
             </label>
             <label>
                 Submit :
@@ -53,4 +54,4 @@ function AddArticleForm() {
     )
 }
 
-export default AddArticleForm
+export default Update

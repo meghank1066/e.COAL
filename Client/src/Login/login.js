@@ -2,6 +2,7 @@ import styles from './login.module.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 function Login(props){
@@ -59,6 +60,7 @@ function Login(props){
                 <br/>
                 <button type='submit'>Login</button>
             </form>
+            <p>Don't have an account ? <Link to="/register">Register</Link></p>
         </section>
     )
 }
