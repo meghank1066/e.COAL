@@ -10,9 +10,11 @@ function Search({ articles }){
     }
 
     const filteredArticles = articles.filter((article) => {
+
+        console.log(articles)
         return (
             article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            article.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+            article.tags?.some(tag => tag.name.toLowerCase().includes(searchTerm.toLowerCase()))
         );
     });
     

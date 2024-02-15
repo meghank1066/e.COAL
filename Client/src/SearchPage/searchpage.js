@@ -18,6 +18,7 @@ function SearchPage(){
 
         fetchArticles();
     }, []);
+    console.log("salut", articles)
     return(
         <div>
             <Search articles={articles} />

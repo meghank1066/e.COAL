@@ -8,8 +8,10 @@ function Article(props) {
     return (
         <>
             <Link to={`/articles/${props.id}`}>
-                <h2>{props.title}</h2>
-                <img src={props.thumbnailURL}></img>
+                <div className={styles.box}>
+                    <img src={props.thumbnailURL}></img>
+                    {props.title}
+                </div>
             </Link>
 
         </>

@@ -14,6 +14,7 @@ import './App.css';
 import { Nav } from './Nav/nav';
 import { useState } from 'react';
 import axios from 'axios';
+import { HeaderL } from './HeaderL/headerL';
 import Register from './Register/register';
 
 function App() {
@@ -49,7 +50,9 @@ function App() {
   
   return (
     <>
-      <nav>
+      <HeaderL/>
+
+      {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/search">Search</Link>
         <Link to="/login">Account</Link>
@@ -58,7 +61,7 @@ function App() {
         <Link to="/form">Form</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/searchpage">SearchPage</Link>
-      </nav>
+      </nav> */}
 
       <Routes>
         <Route exact={true} path="/" element={<Home/>} />
@@ -78,17 +81,18 @@ function App() {
         <Route exact path="/profile" element={<PrivateRoute/>}>
           <Route exact={true} path="/profile" element={<ArticleAccount/>} />
         </Route>
-      <Route exact={true} path="/searchpage" element={<SearchPage/>} />
+        <Route exact={true} path="/searchpage" element={<SearchPage/>} />
       </Routes>
 
-      <nav>
+
+      {/* <nav>
         <Link to="/search"><box-icon name='search'></box-icon></Link>
         <Link to="/"><box-icon name='home' type='solid' ></box-icon></Link>
         {!localStorage.getItem("token") && <Link to="/login"><box-icon name='user-circle' type='solid' ></box-icon></Link>}
         {localStorage.getItem("token") && <Link to="/form"><box-icon name='add-to-queue' ></box-icon></Link>}
         {localStorage.getItem("token") && <Link to="/" onClick={handleLogout}><box-icon name='exit' ></box-icon></Link>}
-      </nav>
-      {/* <Nav accessToken = accessToken/> */}
+      </nav> */}
+      <Nav/>
     </>
   );
 }
