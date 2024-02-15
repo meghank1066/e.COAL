@@ -22,12 +22,13 @@ function ThisArticle() {
     const thumbnailURL = "http://localhost:8000/" + article.thumbnailURL
     
     return (
-        <>
-        <h1>{article.title}</h1>
-        <img src={article.thumbnailURL}></img>
-        <div dangerouslySetInnerHTML={{ __html: article.content }} />
-        </>
+        <div className={styles.articlePage} >
+        <h1 className={styles.articleTitle}>{article.title}</h1>
+        <img src={article.thumbnailURL} className={styles.articleImage} />
+        <div className={styles.articleContent} dangerouslySetInnerHTML={{ __html: article.content }} />
+        </div>
     )
 }
 
 export default ThisArticle
+
