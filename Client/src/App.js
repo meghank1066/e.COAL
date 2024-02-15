@@ -67,10 +67,10 @@ function App() {
         </Route>
         <Route exact path="/profile" element={<PrivateRoute/>}>
           <Route exact={true} path="/profile" element={<ArticleAccount/>} />
-        <Route exact={true} path="/searchpage" element={<SearchPage/>} />
         </Route>
         <Route exact={true} path="/logout" element={<Logout setIsAuthenticated={setIsAuthenticated}/>}/>
       </Routes>
+      <Route exact={true} path="/searchpage" element={<SearchPage/>} />
 
       <nav>
         <Link to="/search"><box-icon name='search'></box-icon></Link>
