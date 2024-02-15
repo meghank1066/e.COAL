@@ -47,14 +47,14 @@ function ArticleAccount(props) {
             <HeaderT />
             <div className={styles.user}>
                 <div className={styles.pers}>
-                    <Link to="/" onClick={handleLogout} id={styles.deco}><box-icon name='exit' ></box-icon></Link>
+                    <Link to="/" onClick={handleLogout} id={styles.deco}><box-icon size="md" name='exit' ></box-icon></Link>
                     <img src="/img/User.png"></img>
                     <p>{articles.name}</p>
                     <p>{articles.email}</p>
                 </div>
                 <h2 className={styles.title}>Your Articles</h2>
                 <div className={styles.res}>
-                {articles.articles?.map(x => <ArticleDelete title={x.title} content={x.content} tags={x.tags} thumbnailURL={x.thumbnailURL} mediaURL={x.mediaURL} id={x.id} setArticles={setArticles}/>)}
+                    {articles.articles?.map(x => <ArticleDelete title={x.title} content={x.content} tags={x.tags} thumbnailURL={x.thumbnailURL} mediaURL={x.mediaURL} id={x.id} setArticles={setArticles} />)}
                 </div>
             </div>
         </>
