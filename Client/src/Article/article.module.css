@@ -29,6 +29,7 @@
     position: absolute;
     background: var(--green-color);
     top: 0;
+    cursor: pointer;
 }
 
 #button:first-child{
