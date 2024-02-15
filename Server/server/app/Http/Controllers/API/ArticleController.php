@@ -55,6 +55,10 @@ class ArticleController extends Controller
             $article->mediaType = "video";
         }
 
+        if($mediaType == "mp3" || $mediaType == "mov" || $mediaType == "wav"){
+            $article->mediaType = "audio";
+        }
+
         // if($request->file("mediaURL")->isValid()) {
         //     $f = $request->file("mediaURL")->hashName();
         //     $request->file("mediaURL")->storeAs("public/upload", $f);

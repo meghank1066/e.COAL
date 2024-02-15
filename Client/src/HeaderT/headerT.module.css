@@ -1,0 +1,6 @@
+.head {
+    margin: 0 auto;
+    background-color: var(--green-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow);
+}

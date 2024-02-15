@@ -25,7 +25,13 @@
 }
 
 .App-link {
-  color: #61dafb;
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+:link {
+  text-decoration: none;
+  color: var(--black-color);
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +41,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+:root {
+  --orange-background : linear-gradient(308deg, rgba(245,169,1,1) 0%, rgba(255,171,81,1) 100%);
+  --blue-background : linear-gradient(308deg, rgba(1,178,153,1) 0%, rgba(0,157,152,1) 100%);
+  --blue-color : #01B299;
+  --green-color : #9EE06F;
+  --red-color :#F06532;
+  --pink-color : #EDB9AD;
+  --orange-color : #F5A901;
+  --pale-color : #E7DECE;
+  --black-color : #2A272A;
+  --shadow : 5px 15px 15px -3px rgba(0,0,0,0.2);
 }

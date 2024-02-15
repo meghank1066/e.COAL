@@ -1,0 +1,13 @@
+.head {
+    margin: 0 auto;
+    background-color: var(--green-color);
+    border-radius: 0 0 30px 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+.head img {
+    width: 10rem;
+}

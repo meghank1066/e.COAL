@@ -14,6 +14,7 @@ import './App.css';
 import { Nav } from './Nav/nav';
 import { useState } from 'react';
 import axios from 'axios';
+import { HeaderL } from './HeaderL/headerL';
 
 function App() {
 
@@ -43,7 +44,9 @@ function App() {
   
   return (
     <>
-      <nav>
+      <HeaderL/>
+
+      {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/search">Search</Link>
         <Link to="/login">Account</Link>
@@ -52,7 +55,7 @@ function App() {
         <Link to="/form">Form</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/searchpage">SearchPage</Link>
-      </nav>
+      </nav> */}
 
       <Routes>
         <Route exact={true} path="/" element={<Home/>} />
@@ -78,7 +81,7 @@ function App() {
         {localStorage.getItem("token") && <Link to="/form"><box-icon name='add-to-queue' ></box-icon></Link>}
         {localStorage.getItem("token") && <Link to="/" onClick={handleLogout}><box-icon name='exit' ></box-icon></Link>}
       </nav>
-      {/* <Nav accessToken = accessToken/> */}
+      <Nav/>
     </>
   );
 }

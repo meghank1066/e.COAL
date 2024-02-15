@@ -1,0 +1,14 @@
+.box {
+    background: var(--blue-background);
+    border-radius: 20px;
+    color: var(--black-color);
+    text-align: center;
+    padding: 0 0 1em 0;
+}
+
+.box img {
+    border-radius: 20px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    width: 100%;
+}
