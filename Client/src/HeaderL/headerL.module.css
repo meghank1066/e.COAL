@@ -1,6 +1,13 @@
 .head {
     margin: 0 auto;
-    background-color: #9EE06F;
-    border-radius: 0 0 10px 10px;
-    box-shadow: 5px 15px 15px -3px rgba(0,0,0,0.2);
+    background-color: var(--green-color);
+    border-radius: 0 0 30px 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+}
+
+.head img {
+    width: 10rem;
 }
