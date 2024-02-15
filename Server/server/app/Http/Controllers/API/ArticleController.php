@@ -20,6 +20,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::all();
+        $articles->load("tags");
         return response()->json($articles);
     }
 
@@ -52,6 +53,10 @@ class ArticleController extends Controller
 
         if($mediaType == "mp4"){
             $article->mediaType = "video";
+        }
+
+        if($mediaType == "mp3" || $mediaType == "mov" || $mediaType == "wav"){
+            $article->mediaType = "audio";
         }
 
         // if($request->file("mediaURL")->isValid()) {
