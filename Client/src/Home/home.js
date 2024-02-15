@@ -1,10 +1,10 @@
 import styles from './home.module.css'
 import React from "react";
-import ArticleTag from '../ArticleTag/articletag';
 import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { HeaderL } from '../HeaderL/headerL'
+import ArticleTag from '../ArticleTag/articletag';
 
 function Home(){
     const [articles, setArticles] = useState([])
