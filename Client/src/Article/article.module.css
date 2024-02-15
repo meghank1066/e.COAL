@@ -27,7 +27,7 @@
 #button{
     border: none;
     position: absolute;
-    background: var(--green-color);
+    background: transparent;
     top: 0;
     cursor: pointer;
 }
