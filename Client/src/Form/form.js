@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styles from './form.module.css'
+import { HeaderT } from "../HeaderT/headerT";
 
 function AddArticleForm() {
     const [formData, setFormData] = useState({ title: "", content: "", tag: "", thumbnailURL: "", mediaURL: "" });
@@ -26,6 +27,9 @@ function AddArticleForm() {
 
     }
     return (
+        <>
+        <HeaderT />
+        
         <form onSubmit={handlesubmit} className={styles.form}>
             <label className={styles.label}>
                 <h1>New Article</h1>
@@ -37,10 +41,10 @@ function AddArticleForm() {
             <label className={styles.label}>
     <textarea
         style={{
-            width: "380px",
+            width: "300px",
             height: "150px",
             maxWidth: "380px",
-            minWidth: "380px",
+            minWidth: "200px",
             minHeight: "100px",
             maxHeight: "200px",
             border: "0.5px solid black",
@@ -67,6 +71,7 @@ function AddArticleForm() {
         <input type="submit" className={styles.button} onClick={""} />
     </label>
         </form>
+        </>
     )
 }
 
