@@ -1,4 +1,5 @@
 import styles from './home.module.css'
+import { HeaderL } from '../HeaderL/headerL'
 
 
 
@@ -6,7 +7,9 @@ function Home(){
         //
     return(
         <section>
-            Welcome to YumYum Home
+            <HeaderL/>
+
+            
 
         </section>
     )
