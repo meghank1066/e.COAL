@@ -9,6 +9,7 @@ import Articles from './Articles.js/articles';
 import ThisArticle from './ThisArticle/thisarticle';
 import AddArticleForm from './Form/form';
 import ArticleAccount from './ArticleAccount/articleaccount';
+import SearchPage from './SearchPage/searchpage';
 import './App.css';
 import { Nav } from './Nav/nav';
 
@@ -24,6 +25,7 @@ function App() {
         <Link to="/articles">Articles</Link>
         <Link to="/form">Form</Link>
         <Link to="/profile">Profile</Link>
+        <Link to="/searchpage">SearchPage</Link>
       </nav>
 
       <Routes>
@@ -35,6 +37,7 @@ function App() {
         <Route exact={true} path={"/articles/:id"} element={<ThisArticle/>} />
         <Route exact={true} path="/form" element={<AddArticleForm/>} />
         <Route exact={true} path="/profile" element={<ArticleAccount/>} />
+        <Route exact={true} path="/searchpage" element={<SearchPage/>} />
       </Routes>
 
       {/* <Nav accessToken = accessToken/> */}
