@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { HeaderL } from '../HeaderL/headerL'
 import ArticleTag from '../ArticleTag/articletag';
+import { Footer } from "../Footer/footer";
 
 function Home() {
     const [articles, setArticles] = useState([])
@@ -56,7 +57,7 @@ function Home() {
             <div className={styles.cat}>
                 <h2>Best recipes</h2>
                 <div className={styles.res}>
-                    <ArticleTag tag="recipe" articles={articles} />
+                    <ArticleTag tag="ecoal23" articles={articles} />
                 </div>
             </div>
 
@@ -66,6 +67,8 @@ function Home() {
                     <ArticleTag tag="guide" articles={articles} />
                 </div>
             </div>
+
+            <Footer/>
 
         </section>
     )
