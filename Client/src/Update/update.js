@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from 'react-router-dom';
 
-function Update() {
+function Update(props) {
     
     let params = useParams()
 
@@ -48,6 +48,10 @@ function Update() {
         }
         
 
+    }
+
+    if(props.user_id != article.user_id){
+        navigate(`/`)
     }
     return (
         <form onSubmit={handlesubmit}>

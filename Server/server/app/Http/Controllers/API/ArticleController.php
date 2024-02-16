@@ -124,6 +124,10 @@ class ArticleController extends Controller
             $article->mediaType = "video";
         }
 
+        if($mediaType == "mp3" || $mediaType == "mov" || $mediaType == "wav"){
+            $article->mediaType = "audio";
+        }
+
         $article->save();
 
         foreach($tags as $t){

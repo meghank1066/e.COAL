@@ -15,7 +15,8 @@ import { Nav } from './Nav/nav';
 import { useState } from 'react';
 import axios from 'axios';
 import { HeaderL } from './HeaderL/headerL';
-import Register from './Register/register';
+import Register from './Register/register'
+import { useEffect } from 'react';
 import Update from './Update/update';
 
 function App() {
@@ -47,6 +48,25 @@ function App() {
     localStorage.removeItem('token')
     setIsAuthenticated(false)
   }
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    if(isAuthenticated){
+      async function fetchUser() {
+          try {
+              const response = await axios.get("http://127.0.0.1:8000/api/user", config)
+              setUser(response.data)
+          } catch (error) {
+              console.error("Error fetching user", error)
+          }
+      }
+    
+
+      fetchUser()
+    }
+  }, [])
+  const user_id = user.id
   
   return (
     <>
@@ -66,7 +86,7 @@ function App() {
           <Route exact={true} path="/form" element={<AddArticleForm/>} />
         </Route>
         <Route exact path={"/update/:id"} element={<PrivateRoute/>}>
-          <Route exact={true} path={"/update/:id"} element={<Update/>} />
+          <Route exact={true} path={"/update/:id"} element={<Update user_id={user_id}/>} />
         </Route>
         <Route exact path="/profile" element={<PrivateRoute/>}>
           <Route exact={true} path="/profile" element={<ArticleAccount setIsAuthenticated={setIsAuthenticated}/>} />

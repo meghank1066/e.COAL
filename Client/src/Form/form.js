@@ -6,7 +6,7 @@ import { HeaderT } from "../HeaderT/headerT";
 
 function AddArticleForm() {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ title: "", content: "", tag: "", thumbnailURL: "", mediaURL: "" });
+    const [formData, setFormData] = useState({});
 
     const config = {
         headers : {"Authorization" : `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}`}
@@ -71,7 +71,7 @@ function AddArticleForm() {
                 <input type="text" name="mediaURL" placeholder="Enter Image URL" value={formData.mediaURL} onChange={handlechange}></input>
             </label>
             <label className={styles.label}>
-        <input type="submit" className={styles.button} onClick={""} />
+        <input type="submit" className={styles.button} />
     </label>
         </form>
         </>
