@@ -6,6 +6,7 @@
     background: var(--orange-background);
     padding: 1em;
     border-radius: 5px;
+    box-shadow: var(--shadow);
 }
 
 .form input {
