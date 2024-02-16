@@ -23,14 +23,25 @@
 }
 
 
-.form input[type="submit"] {
-    background: var(--blue-background);
-    padding: 0.3em 1em;
-    border: none;
-    border-radius: 15px;
-    font-size: 1.2em;
-    box-shadow: var(--shadow);
-    margin: auto;
+.form input[name="title"] {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.form input[name="tags"] {
+    margin-bottom: 0.3em;
+}
+
+.form input[name="mediaURL"] {
+    margin-bottom: 0.5em;
+}
+
+.special {
+    font-size: 1.1em;
+    resize: vertical;
+    overflow: auto;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 1em;
 }
 
 #title {
@@ -39,5 +50,5 @@
     font-weight: 600;
     font-style: normal;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em;
 }

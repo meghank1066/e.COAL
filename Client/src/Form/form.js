@@ -31,10 +31,10 @@ function AddArticleForm() {
             <h1 id={styles.title}>Create your article</h1>
             <form onSubmit={handlesubmit} className={styles.form}>
                 <input type="text" name="title" onChange={handlechange} placeholder="Title"></input>
-                <input type="text" name="content" onChange={handlechange} placeholder="Write rour article here ..."></input>
                 <input type="text" name="tags" onChange={handlechange} placeholder="Tags (seperater by a space)"></input>
                 <input type="text" name="thumbnailURL" onChange={handlechange} placeholder="Link of the image in preview"></input>
                 <input type="text" name="mediaURL" onChange={handlechange} placeholder="Link of the article image"></input>
+                <textarea name="content" onChange={handlechange} placeholder="Write your article here ..." className={styles.special} rows="10"></textarea>
                 <input type="submit" value="Send"></input>
             </form>
         </>
