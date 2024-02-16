@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { HeaderL } from '../HeaderL/headerL'
 import ArticleTag from '../ArticleTag/articletag';
-import { Footer } from "../Footer/footer";
+import  Footer  from "../Footer/footer";
 
 function Home() {
     const [articles, setArticles] = useState([])
