@@ -2,7 +2,6 @@ import styles from './form.module.css'
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import styles from './form.module.css'
 import { HeaderT } from "../HeaderT/headerT";
 
 function AddArticleForm() {
