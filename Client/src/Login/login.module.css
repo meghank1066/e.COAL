@@ -43,3 +43,12 @@
 .log p {
     margin: auto;
 }
+
+#title {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    font-size: 2.5em;
+}

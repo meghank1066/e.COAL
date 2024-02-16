@@ -1,3 +1,4 @@
+import styles from './form.module.css'
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +10,7 @@ function AddArticleForm() {
     const [formData, setFormData] = useState({});
 
     const config = {
-        headers : {"Authorization" : `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}`}
+        headers: { "Authorization": `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}` }
     }
     
 
@@ -31,49 +32,16 @@ function AddArticleForm() {
     }
     return (
         <>
-        <HeaderT />
-        
-        <form onSubmit={handlesubmit} className={styles.form}>
-            <label className={styles.label}>
-                <h1>New Article</h1>
-            </label>
-            <label className={styles.label}>
-                <input type="text" name="title" placeholder="Add Title" value={formData.title} onChange={handlechange}></input>
-            </label>
-
-            <label className={styles.label}>
-    <textarea
-        style={{
-            width: "300px",
-            height: "150px",
-            maxWidth: "380px",
-            minWidth: "200px",
-            minHeight: "100px",
-            maxHeight: "200px",
-            border: "0.5px solid black",
-            borderRadius: "5px 5px 5px 5px"
-        }}
-        className={`${styles.commentBox} ${styles.label} ${styles.draggable}`}
-        name="content"
-        value={formData.content}
-        placeholder="Add Content.."
-        onChange={handlechange}
-    />
-    
-</label>
-            <label className={styles.label}>
-                <input type="text" name="tags" placeholder="#" onChange={handlechange}></input>
-            </label>
-            <label className={styles.label}>
-                <input type="text" name="thumbnailURL" placeholder="Enter Thumbnail" value={formData.thumbnailURL} onChange={handlechange}></input>
-            </label>
-            <label className={styles.label}>
-                <input type="text" name="mediaURL" placeholder="Enter Image URL" value={formData.mediaURL} onChange={handlechange}></input>
-            </label>
-            <label className={styles.label}>
-        <input type="submit" className={styles.button} />
-    </label>
-        </form>
+            <HeaderT />
+            <h1 id={styles.title}>Create your article</h1>
+            <form onSubmit={handlesubmit} className={styles.form}>
+                <input type="text" name="title" onChange={handlechange} placeholder="Title"></input>
+                <input type="text" name="tags" onChange={handlechange} placeholder="Tags (seperater by a space)"></input>
+                <input type="text" name="thumbnailURL" onChange={handlechange} placeholder="Link of the image in preview"></input>
+                <input type="text" name="mediaURL" onChange={handlechange} placeholder="Link of the article image"></input>
+                <textarea name="content" onChange={handlechange} placeholder="Write your article here ..." className={styles.special} rows="10"></textarea>
+                <input type="submit" value="Send"></input>
+            </form>
         </>
     )
 }
