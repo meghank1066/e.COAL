@@ -18,6 +18,7 @@ import { HeaderL } from './HeaderL/headerL';
 import Register from './Register/register'
 import { useEffect } from 'react';
 import Update from './Update/update';
+import NoMatch from './NoMatch/nomatch';
 
 function App() {
 
@@ -92,6 +93,7 @@ function App() {
           <Route exact={true} path="/profile" element={<ArticleAccount setIsAuthenticated={setIsAuthenticated}/>} />
         </Route>
         <Route exact={true} path="/searchpage" element={<SearchPage/>} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
 
       <Nav/>
