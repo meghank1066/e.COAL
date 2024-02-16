@@ -1,11 +1,13 @@
+import styles from './form.module.css'
 import React, { useState } from "react";
 import axios from "axios";
+import { HeaderT } from "../HeaderT/headerT"
 
 function AddArticleForm() {
     const [formData, setFormData] = useState({ title: "", content: "", tag: "", thumbnailURL: "", mediaURL: "" });
 
     const config = {
-        headers : {"Authorization" : `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}`}
+        headers: { "Authorization": `${localStorage.getItem("token_type")} ${localStorage.getItem("token")}` }
     }
 
     function handlechange(e) {
@@ -24,32 +26,18 @@ function AddArticleForm() {
 
     }
     return (
-        <form onSubmit={handlesubmit}>
-            <label>
-                Title :
-                <input type="text" name="title" onChange={handlechange}></input>
-            </label>
-            <label>
-                Content :
-                <input type="text" name="content" onChange={handlechange}></input>
-            </label>
-            <label>
-                Tag :
-                <input type="text" name="tags" onChange={handlechange}></input>
-            </label>
-            <label>
-                ThumbnailURL :
-                <input type="text" name="thumbnailURL" onChange={handlechange}></input>
-            </label>
-            <label>
-                mediaURL :
-                <input type="text" name="mediaURL" onChange={handlechange}></input>
-            </label>
-            <label>
-                Submit :
-                <input type="submit"></input>
-            </label>
-        </form>
+        <>
+            <HeaderT />
+            <h1 id={styles.title}>Create your article</h1>
+            <form onSubmit={handlesubmit} className={styles.form}>
+                <input type="text" name="title" onChange={handlechange} placeholder="Title"></input>
+                <input type="text" name="content" onChange={handlechange} placeholder="Write rour article here ..."></input>
+                <input type="text" name="tags" onChange={handlechange} placeholder="Tags (seperater by a space)"></input>
+                <input type="text" name="thumbnailURL" onChange={handlechange} placeholder="Link of the image in preview"></input>
+                <input type="text" name="mediaURL" onChange={handlechange} placeholder="Link of the article image"></input>
+                <input type="submit" value="Send"></input>
+            </form>
+        </>
     )
 }
 

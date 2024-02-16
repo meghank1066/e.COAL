@@ -36,8 +36,9 @@ function Register(props) {
     }
     return (
         <>
-        <HeaderL/>
+            <HeaderL />
             <section>
+                <h1 id={styles.title}>Register</h1>
                 <form onSubmit={handleRegister} className={styles.log}>
                     <label>
                         Name
@@ -47,7 +48,7 @@ function Register(props) {
                         name="name"
                         onChange={handlechange}
                     />
-                   <br /> 
+                    <br />
 
                     <label>
                         Email
