@@ -1,6 +1,6 @@
 import styles from './footer.module.css'
 
-export function Footer() {
+ function Footer() {
     return (
         <>
             <div className={styles.footer}>
@@ -14,3 +14,5 @@ export function Footer() {
         </>
     )
 }
+
+export default Footer
