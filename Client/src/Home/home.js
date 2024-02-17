@@ -5,8 +5,9 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { HeaderL } from '../HeaderL/headerL'
 import ArticleTag from '../ArticleTag/articletag';
+import  Footer  from "../Footer/footer";
 
-function Home(){
+function Home() {
     const [articles, setArticles] = useState([])
 
     useEffect(() => {
@@ -14,6 +15,7 @@ function Home(){
             try {
                 const response = await axios.get("http://127.0.0.1:8000/api/articles")
                 setArticles(response.data)
+                console.log(response.data)
             } catch (error) {
                 console.error("Error fetching articles", error)
             }
@@ -22,9 +24,16 @@ function Home(){
 
         fetchArticles()
     }, [])
-    return(
+    return (
         <section>
             <HeaderL />
+
+            <div className={styles.cat}>
+                <h2>It's valentine's day !</h2>
+                <div className={styles.res}>
+                    <ArticleTag tag="valentine" articles={articles} />
+                </div>
+            </div>
 
             <div className={styles.values}>
                 <h1>
@@ -45,8 +54,23 @@ function Home(){
                     </div>
                 </div>
             </div>
-            <ArticleTag tag="ecoal23" articles={articles} />
-            <ArticleTag tag="voiture" articles={articles} />
+
+            <div className={styles.cat}>
+                <h2>Best recipes</h2>
+                <div className={styles.res}>
+                    <ArticleTag tag="ecoal23" articles={articles} />
+                </div>
+            </div>
+
+            <div className={styles.cat}>
+                <h2>Best guides</h2>
+                <div className={styles.res}>
+                    <ArticleTag tag="guide" articles={articles} />
+                </div>
+            </div>
+
+            <Footer/>
+
         </section>
     )
 }
