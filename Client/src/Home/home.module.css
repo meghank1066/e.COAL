@@ -1,6 +1,9 @@
 .values {
-    background: var(--blue-background);
     padding: 1em;
+   background: var(--pink-color);
+   border: 5px solid pink;
+   border-color: var(--pink-color);
+   border-radius: 30px;
     box-shadow: var(--shadow);
 }
 
@@ -40,3 +43,11 @@
     font-weight: 500;
     font-style: normal;
 }
+
+.Footer {
+    position: fixed;
+    z-index: 999; 
+    margin: auto;
+    bottom: 0;
+}
+

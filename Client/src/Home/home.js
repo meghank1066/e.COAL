@@ -68,11 +68,11 @@ function Home() {
                     <ArticleTag tag="guide" articles={articles} />
                 </div>
             </div>
-
-            <Footer/>
-
+            
         </section>
+        
     )
+    
 }
 
 export default Home
