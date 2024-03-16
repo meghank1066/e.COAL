@@ -1,12 +1,4 @@
 .form {
-<<<<<<< HEAD
-    margin: 60px auto; 
-    padding: 40px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 300px; 
-=======
->>>>>>> a72822b683b99b5d8b2c82c3ddad3f259e5cb43d
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -32,29 +24,6 @@
 }
 
 
-<<<<<<< HEAD
-    background-color: var(--blue-color);
-    color: white;
-    padding: 10px 20px; 
-    font-size: 16px; 
-    cursor: pointer;
-    border-radius: 5px; 
-    transition: background-color 0.3s ease; 
-    border-color: 1px solid black;
-  
-  }
-
-  @media only screen and (max-width: 480px) {
-    .textarea {
-        width: 200px; /* Make the textarea take up the full width of the container */
-        max-width: 300px; /* Remove max-width for responsiveness */
-        min-width: unset; /* Remove min-width for responsiveness */
-        height: 120px; /* Adjust the height for smaller screens */
-        max-height: 180px; 
-    }
-
-  }
-=======
 .form input[name="title"] {
     font-size: 1.5em;
     margin-bottom: 0.5em;
@@ -84,4 +53,3 @@
     text-align: center;
     font-size: 2em;
 }
->>>>>>> a72822b683b99b5d8b2c82c3ddad3f259e5cb43d

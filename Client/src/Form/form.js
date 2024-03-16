@@ -31,48 +31,6 @@ function AddArticleForm() {
     }
     return (
         <>
-<<<<<<< HEAD
-        <HeaderT />
-        
-        <form onSubmit={handlesubmit} className={styles.form}>
-            <label className={styles.label}>
-                <h1>New Article</h1>
-            </label>
-            <label className={styles.label}>
-                <input type="text" name="title" placeholder="Add Title" value={formData.title} onChange={handlechange}></input>
-            </label>
-
-            <label className={styles.label}>
-    <textarea
-    placeholder="Write Content.."
-              style={{
-                width: "100%",
-                maxWidth: "380px",
-                height: "150px",
-                maxHeight: "200px",
-                border: "0.5px solid black",
-                borderRadius: "5px",
-                resize: "none", 
-            }}
-
-        />
-
-    
-</label>
-            <label className={styles.label}>
-                <input type="text" name="tags" placeholder="#" onChange={handlechange}></input>
-            </label>
-            <label className={styles.label}>
-                <input type="text" name="thumbnailURL" placeholder="Enter Thumbnail" value={formData.thumbnailURL} onChange={handlechange}></input>
-            </label>
-            <label className={styles.label}>
-                <input type="text" name="mediaURL" placeholder="Enter Image URL" value={formData.mediaURL} onChange={handlechange}></input>
-            </label>
-            <label className={styles.label}>
-        <input type="submit" className={styles.button} onClick={""} />
-    </label>
-        </form>
-=======
             <HeaderT />
             <h1 id={styles.title}>Create your article</h1>
             <form onSubmit={handlesubmit} className={styles.form}>
@@ -83,7 +41,6 @@ function AddArticleForm() {
                 <textarea name="content" onChange={handlechange} placeholder="Write your article here ..." className={styles.special} rows="10"></textarea>
                 <input type="submit" value="Send"></input>
             </form>
->>>>>>> a72822b683b99b5d8b2c82c3ddad3f259e5cb43d
         </>
     )
 }
