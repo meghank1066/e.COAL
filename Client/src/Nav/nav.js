@@ -1,12 +1,13 @@
 
 
-import styles from './nav.module.css'; // Correct import statement for styles
+import styles from './nav.module.css'; 
 import 'boxicons';
 import { Route, Link, Routes } from "react-router-dom";
 
 export function Nav() {
     return (
         <>
+      
             <nav className={styles.nav}>
                 <Link to="/searchpage"><box-icon name='search-alt'></box-icon></Link>
                 <Link to="/"><box-icon type='solid' name='home'></box-icon></Link>

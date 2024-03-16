@@ -5,6 +5,7 @@ function Credits(){
     return(
         <section>
             Welcome to YumYum Credits
+            
         </section>
     )
 }
