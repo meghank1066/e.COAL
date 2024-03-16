@@ -1,6 +1,7 @@
 import styles from './search.module.css'
 import React, { useState } from "react";
 import Article from '../Article/article';
+import Footer from '../Footer/footer';
 
 function Search({ articles }) {
     const [searchTerm, setSearchTerm] = useState("");
@@ -30,6 +31,7 @@ function Search({ articles }) {
                 {filteredArticles.map(x => <Article key={x.id} title={x.title} thumbnailURL={x.thumbnailURL} id={x.id} />)}
             </div>
         </section>
+        
     )
 }
 

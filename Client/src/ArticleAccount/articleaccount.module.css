@@ -1,6 +1,6 @@
 .res {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
     margin: 1em;
 }
@@ -13,14 +13,13 @@
 }
 
 .pers {
-    background: var(--orange-background);
     margin-top: -20px;
     padding-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
     padding-bottom: 0.5em;
 }
 
@@ -41,4 +40,9 @@
     font-size: 2em;
     margin-top: 0.5em;
     margin-bottom: 0;
+}
+
+.bi-person-circle {
+   width: 100px;
+   height: 100px;
 }

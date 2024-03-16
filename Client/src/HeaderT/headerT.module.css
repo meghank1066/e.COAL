@@ -1,4 +1,4 @@
-.head {
+/* .head {
     margin: 0 auto;
     background-color: var(--green-color);
     border-radius: 0 0 20px 20px;
@@ -8,9 +8,32 @@
     margin-bottom: 1em;
     position: relative;
     z-index: 999;
+    margin-bottom: 1em;
+    height: 10rem;
+    align-items: center;
 }
 
 .head img {
-    width: 15rem;
+    width: 20rem;
+    height: 20rem;
     margin: 0.3em;
+}
+ */
+
+
+ .head {
+    margin: 0 auto;
+    background-color: var(--pink-color);
+    border-radius: 0 0 30px 30px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    height: 8rem;
+    align-items: center;
+}
+
+.head img {
+    width: 20rem;
+    height: 20rem;
 }

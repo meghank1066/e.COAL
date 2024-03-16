@@ -38,7 +38,28 @@
 
 .res {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1em;
     margin: 1em;
+}
+
+.res {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Define o tamanho mínimo e máximo dos itens */
+    grid-gap: 1em; /* Espaçamento entre os itens */
+    margin: 1em;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    z-index: 999;
+}
+
+
+section {
+    padding-bottom: 3em; 
 }

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { HeaderT } from "../HeaderT/headerT";
+import Footer from '../Footer/footer';
 
 function AddArticleForm() {
     const navigate = useNavigate();
@@ -34,15 +35,53 @@ function AddArticleForm() {
             <HeaderT />
             <h1 id={styles.title}>Create your article</h1>
             <form onSubmit={handlesubmit} className={styles.form}>
-                <input type="text" name="title" onChange={handlechange} placeholder="Title"></input>
-                <input type="text" name="tags" onChange={handlechange} placeholder="Tags (seperater by a space)"></input>
-                <input type="text" name="thumbnailURL" onChange={handlechange} placeholder="Link of the image in preview"></input>
-                <input type="text" name="mediaURL" onChange={handlechange} placeholder="Link of the article image"></input>
-                <textarea name="content" onChange={handlechange} placeholder="Write your article here ..." className={styles.special} rows="10"></textarea>
+            <label className={styles.label}>
+                <input type="text" name="title" onChange={handlechange} placeholder="Title"></input></label>
+                <label className={styles.label}>
+                <input type="text" name="tags" onChange={handlechange} placeholder="Tags (seperater by a space)"></input></label>
+                <label className={styles.label}>
+                    <input type="text" name="thumbnailURL" onChange={handlechange} placeholder="Link of the image in preview"></input></label>
+                    <label className={styles.label}>
+                        <input type="text" name="mediaURL" onChange={handlechange} placeholder="Link of the article image"></input></label>
+                        <label className={styles.label}>
+                <textarea name="content" onChange={handlechange} placeholder="Write your article here ..." className={styles.special} rows="10"></textarea></label>
+                <label className={styles.label}>
                 <input type="submit" value="Send"></input>
+                </label>
             </form>
+            <Footer/>
         </>
     )
 }
 
 export default AddArticleForm
+
+
+// //  return (
+//         <form onSubmit={handlesubmit} className={styles.form}>
+//             <label className={styles.label}>
+//                 Add Title:
+//                 <input type="text" name="title" value={formData.title} onChange={handlechange}></input>
+//             </label>
+//             <label className={styles.label}>
+//                 Add Content:
+//                 <input type="text" name="content" value={formData.content} onChange={handlechange}></input>
+//             </label>
+//             <label className={styles.label}>
+//                 Tag:
+//                 <input type="text" name="tags" onChange={handlechange}></input>
+//             </label>
+//             <label className={styles.label}>
+//                 Add Thumbnail:
+//                 <input type="text" name="thumbnailURL" value={formData.thumbnailURL} onChange={handlechange}></input>
+//             </label>
+//             <label className={styles.label}>
+//                 Add Media:
+//                 <input type="text" name="mediaURL" value={formData.mediaURL} onChange={handlechange}></input>
+//             </label>
+//             <label className={styles.label}>
+//                 <input type="submit" onClick={""}></input>
+//             </label>
+//         </form>
+//     )
+// }

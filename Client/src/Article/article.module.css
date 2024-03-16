@@ -1,9 +1,10 @@
 .box {
-    background: var(--blue-background);
+    background: #ffffff;
     border-radius: 20px;
     color: var(--black-color);
     text-align: center;
     padding: 0 0 1em 0;     
+    size: 2em;
 }
 
 .box img {
